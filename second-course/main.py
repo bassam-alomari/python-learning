@@ -117,4 +117,63 @@ age=int(input("enter your age : ")) # this use for input
 print(20 + age)
 
 
-# 10
+# 10 Calc App
+
+
+
+# 11 Comparison operations
+
+#bolean : True or False
+# == 
+result = (10==11)
+print(result)
+# != 
+result = (10!=11)
+print(result)
+
+# < 
+result = (10<11)
+print(result)
+# > 
+result = (10>11)
+print(result)
+
+# <=
+result = (10<=11)
+print(result)
+# >=
+result = (10<=11)
+print(result)
+
+# 12 Shortcuts Comparison operations
+x = 10
+x+=10
+x+=10
+x+=20
+x-=7
+x*=7
+x/=7
+x%=7
+
+# 13 Lgical Operators
+# and or
+
+# and : true
+x=10
+y=11
+print(x<y and 0>1)
+print(x<y or 0>1)
+print(not True)
+print(not(10<2))
+
+# 14 if elif
+
+name="bassam"
+if name=="bassam": #Error if you dont use :
+    print("your name is bassam")
+elif name=="mohammad": #Error if you dont use :
+    print("your name is mohammad")
+else: #Error if you dont use :
+    print("sorry")
+
+# 15 Advanced Calculator App
