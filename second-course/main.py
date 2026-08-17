@@ -177,3 +177,40 @@ else: #Error if you dont use :
     print("sorry")
 
 # 15 Advanced Calculator App
+
+
+# 16 nested if
+# الفكرة: شرط جوا شرط - if داخل if
+# بعد ما يتحقق الشرط الأول، بنفحص شرط ثاني جوّه
+
+name = "bassam"
+age = 21
+
+if name == "bassam":      # الشرط الأول
+    print("your name is bassam")
+    if age >= 18:         # Nested if - شرط ثاني جوا الأول
+        print("and you are adult")
+    else:
+        print("and you are under 18")
+else:
+    print("sorry")
+
+# ملاحظة: ركّز على المسافة البادئة (indentation) - هي اللي بتحدد مين جوا مين
+
+# -------------------------------
+# 🎯 تحدي 16: اكتب انت تحت هذا السطر
+# برنامج يسأل: الاسم + العمر
+# - إذا الاسم bassam والعمر >= 18 → اطبع: welcome bassam
+# - إذا الاسم bassam والعمر أقل → اطبع: you are underage
+# - إذا الاسم غير bassam → اطبع: who are you?
+# (استخدم input + int + nested if - شغلك من راسك، وبعدها نفحص سوا)
+# -------------------------------
+name = input("Enter Your Name : ")
+age = int(input("Enter Your Age : "))
+if name == "bassam":
+    if age>=18:
+        print("Welcome Bassam")
+    else:
+        print("You Are Underage")
+else:
+    print("Who Are You ?")        
