@@ -180,30 +180,30 @@ else: #Error if you dont use :
 
 
 # 16 nested if
-# الفكرة: شرط جوا شرط - if داخل if
-# بعد ما يتحقق الشرط الأول، بنفحص شرط ثاني جوّه
+# Idea: condition inside a condition - if inside if
+# After the first condition is met, we check a second condition inside it
 
 name = "bassam"
 age = 21
 
-if name == "bassam":      # الشرط الأول
+if name == "bassam":      # First condition
     print("your name is bassam")
-    if age >= 18:         # Nested if - شرط ثاني جوا الأول
+    if age >= 18:         # Nested if - second condition inside the first
         print("and you are adult")
     else:
         print("and you are under 18")
 else:
     print("sorry")
 
-# ملاحظة: ركّز على المسافة البادئة (indentation) - هي اللي بتحدد مين جوا مين
+# Note: Focus on indentation - it determines which code is inside which block
 
 # -------------------------------
-# 🎯 تحدي 16: اكتب انت تحت هذا السطر
-# برنامج يسأل: الاسم + العمر
-# - إذا الاسم bassam والعمر >= 18 → اطبع: welcome bassam
-# - إذا الاسم bassam والعمر أقل → اطبع: you are underage
-# - إذا الاسم غير bassam → اطبع: who are you?
-# (استخدم input + int + nested if - شغلك من راسك، وبعدها نفحص سوا)
+# Challenge 16: Write below this line
+# Program asks for: name + age
+# - If name is bassam and age >= 18 → print: welcome bassam
+# - If name is bassam and age < 18 → print: you are underage
+# - If name is not bassam → print: who are you?
+# (Use input + int + nested if - write it yourself, then we check together)
 # -------------------------------
 name = input("Enter Your Name : ")
 age = int(input("Enter Your Age : "))

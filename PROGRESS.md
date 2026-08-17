@@ -1,41 +1,41 @@
-# سجل تقدم بايثون — Bassam Alomari
+# Python Learning Progress — Bassam Alomari
 
-البداية: 15/8/2026 (الرجوع للبرمجة بعد نسيان)
+Started: 15/8/2026 (returning to programming after forgetting)
 
-## المستوى الحالي
-- مبتدئ — **تغيّر الكورس في 16/8**: تخلى عن Elzero (حسّ إنه مو فاهم عليه) → كورس ثاني أبطأ وأكثر تفصيلاً (مجلد `2nd Course\main.py` — يغطي print, المتغيرات, الأنواع, العمليات, %, input, str())
+## Current Level
+- Beginner — **Switched courses on 16/8**: Dropped Elzero (felt he wasn't explaining well) → A slower, more detailed second course (folder `second-course\main.py` — covers print, variables, types, operations, %, input, str())
 
-## القواعد الذهبية
-- التعلم عبر يوتيوب (كورس بايثون عربي) + **التطبيق الفوري**: اكتب مع الفيديو بملف كود
-- كل ما تخلص مقطع/درس → اكتب ملخص صغير بملف تمرين (أنا بساعدك)
-- الأخطاء مش عيب — بتتعلم منها (وهي بتوثق هون!)
+## Golden Rules
+- Learning via YouTube (Arabic Python course) + **Immediate practice**: Write along with the video in a code file
+- Every time you finish a segment/lesson → Write a small summary in a practice file (I help you)
+- Mistakes are not bad — you learn from them (and they are documented here!)
 
-## الأخطاء الشائعة (سجل الأخطاء)
-| التاريخ | الخطأ | التصحيح |
+## Common Mistakes (Error Log)
+| Date | Mistake | Fix |
 |---|---|---|
-| 15/8/2026 | `=` بدل `==` في المقارنة | المقارنة بـ `==`، `=` للتعيين |
-| 15/8/2026 | نسيان `:` بعد `if` | أي شرط لازم ينتهي بـ `:` |
-| 15/8/2026 | فهرس مصفوفة: `sum[2]` على مصفوفة من عنصرين | الفهرسة تبدأ من 0، وآخر فهرس = عدد العناصر - 1 |
-| 15/8/2026 | متغير تراكمي بدون قيمة بداية (`x=x+prices[i]`) | `x = 0` قبل اللوب |
-| 15/8/2026 | `range(1,5)` بدل `range(0,4)` | اللوب يبدأ من 0 عشان يمسك أول عنصر |
-| 15/8/2026 | كتابة `dist` بدل `dict` في تعليق | النوع الصحيح للقاموس هو `dict` |
-| 16/8/2026 | `int = 1` ثم `int(input(...))` → `TypeError: 'int' object is not callable` | **لا تسمي متغير باسم دالة جاهزة** (`int`/`float`/`str`/`print`...) — بيخطف الاسم من بايثون. الحل: `my_int`/`num`... |
-| 16/8/2026 | `float = 1.1` بنفس الملف — قنبلة موقوتة | مصلّح لنفس السبب (`my_float`) |
+| 15/8/2026 | `=` instead of `==` in comparison | Use `==` for comparison, `=` for assignment |
+| 15/8/2026 | Forgetting `:` after `if` | Every condition must end with `:` |
+| 15/8/2026 | Array index: `sum[2]` on a 2-element array | Indexing starts at 0, last index = count - 1 |
+| 15/8/2026 | Accumulator variable without initial value (`x=x+prices[i]`) | `x = 0` before the loop |
+| 15/8/2026 | `range(1,5)` instead of `range(0,4)` | Loop starts at 0 to capture the first element |
+| 15/8/2026 | Writing `dist` instead of `dict` in a comment | The correct type for a dictionary is `dict` |
+| 16/8/2026 | `int = 1` then `int(input(...))` → `TypeError: 'int' object is not callable` | **Never name a variable with a built-in function name** (`int`/`float`/`str`/`print`...) — it hijacks the name from Python. Fix: `my_int`/`num`... |
+| 16/8/2026 | `float = 1.1` in the same file — time bomb | Fixed for the same reason (`my_float`) |
 
-## الدروس المكتملة
-- [x] دروس 2-8 (15/8): طباعة + تعليقات + أنواع بيانات + متغيرات — ملفات مدمجة (1-Print.py / 2-comments.py / 3-Data_Types.py / 4-Variables_Part1.py) ✅
-  - ملاحظة: المستخدم يكتب التمارين **جوا ملفات الدروس** (نظام مدمج) — هذا أسلوبه، نطبعه إحترام
-- [ ] دروس 9-12 (تطبيق): Escape Sequences + Concatenation + String Methods + Slicing — التحدي: تمارين Slicing (يمكن جوا ملف موجود)
+## Completed Lessons
+- [x] Lessons 2-8 (15/8): Printing + Comments + Data Types + Variables — Inline files (1-Print.py / 2-comments.py / 3-Data_Types.py / 4-Variables_Part1.py) ✅
+  - Note: The user writes exercises **inside the lesson files** (inline system) — this is his style, we respect it
+- [ ] Lessons 9-12 (practice): Escape Sequences + Concatenation + String Methods + Slicing — Challenge: Slicing exercises (can be in an existing file)
 
-## التمارين المطلوبة حاليًا
-- [ ] درس 12: ملف `5-Slicing.py` (تحدي الشرائح)
-- [ ] درس 4: (تم) ملف `4-Variables.py` — التحدي القديم انتهى بملف Variables_Part1
-- [ ] مسار DSA: Two Sum (NeetCode) — أول سؤال، بعد إتقان القوائم + اللوبات + القواميس (~نهاية الأسبوع 1)
+## Current Practice Tasks
+- [ ] Lesson 12: File `5-Slicing.py` (slicing challenge)
+- [ ] Lesson 4: (done) File `4-Variables.py` — old challenge finished in Variables_Part1
+- [ ] DSA path: Two Sum (NeetCode) — first question, after mastering lists + loops + dictionaries (~end of week 1)
 
-## التقدم (يُحدَّث كل جلسة)
-- 15/8/2026: بدأ الإحماء، كتب أول كود حقيقي (لوب + مصفوفة + if) — فيه أخطاء بسيطة قيد التصحيح
-- 15/8/2026: تحوّل لكورس Elzero — أنجز أول 12 درس (print, comments, data types, variables, slicing...) ✅ — التقييم: ممتاز، مع تنبيه: ملف تطبيقي لكل درس قادم
-- 16/8/2026: تحوّل للكورس الثاني (أبطأ وأوضح) — كتب ملف `main.py` كامل (9 أقسام: print, متغيرات, أنواع, عمليات, %، input) — **شخّصنا وحللنا خطأ `int = 1` معاً** ✅ | ✅ إصلاح نجح، الملف يشتغل للنهاية (40 = 20 + 20)
-- 16/8/2026: **🏆 أول برنامج مستقل 100% من راسه: حاسبة (`Calculator App.py`)** — input + float + العمليات الخمس، شغّلت من أول تشغيل ونتايجها صح كلها — أفضل من حل صاحب الفيديو (اللي كان مكسور) ✅ — تقييم: 10/10
-- 16/8/2026: **🌍 المشروع على الإنترنت:** repo `python-learning` عام على GitHub (`bassam-alomari`) — الملفات نظمت (elzero-course / second-course) ودفعت بنجاح ✅ — أول مشروع منشور في السيرة العامة
-- 16/8/2026: **👑 أول برنامج "ذكي": `Advanced_Calculator_App.py`** — تطبيق if/elif/else على الحاسبة: اختيار العملية + **حماية من القسمة على صفر** + رسالة "Bad Operator" — ناجح من أول تشغيل بثلاث حالات اختبار (عادي / قسمة صفر / عملية غلط) — تعلم وحده: المقارنات + المنطقية + الشروط (أقسام 11-15 في main.py) — تقييم: 10/10
+## Progress (Updated Each Session)
+- 15/8/2026: Started warm-up, wrote first real code (loop + array + if) — minor errors being fixed
+- 15/8/2026: Switched to Elzero course — completed first 12 lessons (print, comments, data types, variables, slicing...) ✅ — Rating: Excellent, with note: practical file per lesson coming
+- 16/8/2026: Switched to second course (slower, clearer) — Wrote complete `main.py` (9 sections: print, variables, types, operations, %, input) — **Diagnosed and analyzed `int = 1` error together** ✅ | ✅ Fix successful, file runs to the end (40 = 20 + 20)
+- 16/8/2026: **🏆 First 100% independent program: Calculator App** — input + float + 5 operations, ran first try with all correct results — better than the video host's solution (which was broken) ✅ — Rating: 10/10
+- 16/8/2026: **🌍 Project on the internet:** `python-learning` repo public on GitHub (`bassam-alomari`) — Files organized (elzero-course / second-course) and pushed successfully ✅ — First published project on the profile
+- 16/8/2026: **👑 First "smart" program: Advanced_Calculator_App.py** — Applied if/elif/else to the calculator: operator selection + **divide-by-zero protection** + "Bad Operator" message — Successful on first run with three test cases (normal / zero division / invalid operator) — Self-taught: comparisons + logical operators + conditions (sections 11-15 in main.py) — Rating: 10/10
