@@ -213,4 +213,211 @@ if name == "bassam":
     else:
         print("You Are Underage")
 else:
-    print("Who Are You ?")        
+    print("Who Are You ?")
+
+
+# nested if 
+
+drink = input ("What would you like to drink ? (coffee/tea) : ")
+
+if drink == "coffee":
+    sugar=input("Do u want it black or with sugar ? ")
+
+    if sugar=="black":
+        print("Black Coffee")
+    elif sugar== "With sutgar":
+        print("Nice Coffee With Sugar ")
+    else:
+        print("bad input")
+
+elif drink =="tea":
+    type_of_tea=input("Grean tea or Red tea : ")
+    if(type_of_tea=="green"):
+        print("green tea")
+    elif type_of_tea=="red":
+        print("red tea")
+    else:
+        print("bad input")
+
+gender="female"
+age=14
+
+if gender=="male":
+    print("gender : male ")
+    if age<=21:
+        print("he is young boy ")
+
+elif gender=="female":
+    print("gender : female")
+    if age<=21:
+        print("She is young girl")
+
+# 17 if & and / or
+
+userName = input("Enter Your userName : ")
+password = input("Enter Your password : ")
+
+
+if userName == "ahmed" and password=="1234":
+    print("Login Successful ")
+elif userName=="ahmed" or password=="1234":
+    print("Almost Correct but one dof the details is wrong ")
+
+else:
+    print("wrong userName aand password ")
+
+# | ----------------------------- |
+
+has_invitation=input("Do u have an invitation ? (yes/no) : ")
+is_formal=input("Are wearing formal ? (yes/no) : ")
+
+if has_invitation =="yes" and is_formal=="yes":
+    print("Welcome")
+elif has_invitation=="yes" or is_formal=="yes":
+    print("Okay we will let u in ")
+else:
+    print("Sorry")
+
+# 18 list
+
+# name1="Ahmaed" --> This is wrong
+# name2="Ali"    --> This is wrong
+# name3="eslam"  --> This is wrong
+
+students = ["ahmed","Ali","Eslam","Mohamed"]
+
+print(students)
+
+grades = [80,20,50,12]
+list1 = ["Ahmed",20,1.2]
+print("list1 is ",list1)
+
+print("0 index in list1 is ",list1[0])
+print("1 index in list1 is ",list1[1])
+print("2 index in list1 is ",list1[2])
+print("-1 index in list1 is ",list1[-1])
+print("-2 index in list1 is ",list1[-2])
+print("-3 index in list1 is ",list1[-3])
+
+# 19 Advanced list
+
+# Change item in List
+
+fruits = ["apple","banana","orange"]
+
+print("before ", fruits)
+
+fruits[0] = "Kiwi"
+
+print("After ", fruits)
+
+# fruits[3] = "Kiwi" ---> Error
+# print(fruits)
+
+# Tools can be use in list (append/insert/remove) This is functions // & del list
+
+fruits.append("kiwi")
+
+print("After 2 steps ", fruits)
+
+fruits.insert(0,"kiwi") # insert before the index (shift right)
+
+print("After 3 steps ", fruits)
+
+fruits.insert(-1,"kiwi") # insert before the index (shift right)
+
+print("After 4 steps ", fruits)
+
+fruits.remove("kiwi")
+print("After 5 steps ", fruits)
+
+del fruits[0]
+print("After 5 steps ", fruits)
+
+# pop in lists
+fruits.pop
+print("After 6 steps ", fruits)
+
+# 20 loops
+
+# print("Hello")
+# print("Hello")
+# print("Hello")
+# print("Hello")
+# print("Hello") ------> This is bad Method for large Number of loops
+
+
+# for in
+
+for i in range(5):
+    print(i," Hello")
+
+
+for i in range(1,11):
+    print(i)
+
+word = "python"
+for letter in word:
+    print(letter)
+
+# This is print 
+# p
+# y
+# t
+# h
+# o
+# n
+
+total = 0
+
+for i in range(1,11):
+    total+=i
+
+print("total = ",total)
+
+
+# while
+i=1
+while i<=5:
+    print("Hello")
+    i+=1
+
+print("welcome")
+
+#loops : while
+# 0 2 4 6 8 10 : while
+
+i=0
+while i<=10:
+    print(i)
+    i+=2
+
+
+# for loop with list
+names=["Ahmed","Ali","Eslam"]
+
+for n in names:
+    print(n)
+
+# break & continue in for loop
+for n in names:
+    if n == "Ali":
+        print("Break The Loop")
+        break
+
+for i in range(1,6):
+    if i==3:
+        continue
+    print(i)
+
+i=0
+while i<10:
+    i+=1
+    if i==3:
+        continue
+    if i==7:
+        break
+    print("i = ",i)
+
+# 21 Fauctions
+
