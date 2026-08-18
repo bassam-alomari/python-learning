@@ -419,5 +419,22 @@ while i<10:
         break
     print("i = ",i)
 
-# 21 Fauctions
+# 21 Fauctions Part 1
 
+def greet():
+    print("Welcome")
+    print("bassam")
+
+greet()
+greet()
+
+# 21 Fauctions Part 2 : parameter
+def sayHello(name,age):
+    print("Hello", name)
+
+sayHello("bassam",21)
+
+# 21 Fauctions Part 3 : return
+
+def display():
+    print()
