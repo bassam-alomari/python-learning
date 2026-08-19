@@ -437,4 +437,9 @@ sayHello("bassam",21)
 # 21 Fauctions Part 3 : return
 
 def display():
-    print()
+    print("bassam")
+    return("bassam")
+
+name = display()
+print(name)
+
