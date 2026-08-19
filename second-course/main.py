@@ -443,3 +443,35 @@ def display():
 name = display()
 print(name)
 
+def add(x , y):
+    return x+y
+
+result= add(10,20)
+print("Result is ",result)
+print(result)
+
+
+# What is the difference between `return` and `print`?
+
+def mult(x,y):
+    return x*y
+
+def show(x,y):
+    print(x*y)
+
+result1 = mult(12,17) # ٍStore the result in result1
+
+result2 = show(87,23) # ٍStore the None in result2
+
+print("Result return ",result1)
+print("Result print ",result2)
+
+
+# | --------------------------------- |
+
+def get_discount(price):
+    return price*0.5
+
+final_price = get_discount(1000)
+
+print(final_price)
