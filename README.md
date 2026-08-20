@@ -2,7 +2,7 @@
 
 # Hey there, I'm Bassam Alomari! 👋
 
-<img src="https://github.com/SP-XD/SP-XD/blob/main/images/hellocoders_rounded.gif?raw=true" alt="Hello Coders" width="60%"/>
+![Profile Views](https://komarev.com/ghpvc/?username=bassam-alomari&style=flat&color=blue&label=PROFILE+VIEWS)
 
 </div>
 
