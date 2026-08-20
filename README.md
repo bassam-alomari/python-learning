@@ -15,7 +15,6 @@
 - 🔐 **Cryptography Enthusiast** — learning RSA encryption
 - 🐍 **Python Developer** — learning fast, building faster
 - 🎥 **YouTube Content Creator** — sharing my coding journey
-- 🏆 **Hackathon Participant** — GSMA MENA Ignite + Tech3Arabi 2026
 
 ---
 
@@ -37,7 +36,6 @@
 
 - 🐍 Mastering Python (21 sections completed in4 days!)
 - 🧩 DSA Problem Solving (NeetCode 150)
-- 🏆 Preparing for Hackathons (GSMA MENA Ignite + Tech3Arabi)
 - 🌐 Network Engineering Field Training
 - 🔐 Cryptography Course (RSA)
 
