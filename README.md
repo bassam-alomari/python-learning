@@ -51,6 +51,6 @@
 
 <div align="center">
 
-**⚡ Fun Fact:** I learned Python basics in4 days and solved my first DSA problem on the same day! 🚀
+**⚡ Fun Fact:** I learned Python basics in 4 days and solved my first DSA problem on the same day! 🚀
 
 </div>
