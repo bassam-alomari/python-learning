@@ -34,7 +34,7 @@
 
 ## 🎯 Currently Working On
 
-- 🐍 Mastering Python (21 sections completed in4 days!)
+- 🐍 Mastering Python (21 sections completed in 4 days!)
 - 🧩 DSA Problem Solving (NeetCode 150)
 - 🌐 Network Engineering Field Training
 - 🔐 Cryptography Course (RSA)
