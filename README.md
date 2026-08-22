@@ -14,7 +14,7 @@
 - 🌐 **Network Engineering Trainee** — currently undergoing university field training
 - 🔐 **Cryptography Enthusiast** — learning RSA encryption
 - 🐍 **Python Developer** — learning fast, building faster
-- 🎥 **YouTube Content Creator** — sharing my coding journey
+- 🎥 **YouTube Content Creator** — Sharing My Content For Fun
 
 ---
 
