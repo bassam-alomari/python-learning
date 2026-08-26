@@ -155,5 +155,5 @@ print("=" * 50)
 #     - camelCase (other languages): firstName
 
 # ============================================================
-# NEXT LESSON: Strings (Part 1)
+# NEXT LESSON: Variables (Theory)
 # ============================================================

@@ -89,3 +89,7 @@ def greet():
 print("Exercise 1: Hello Python!")
 print("Exercise 2:", 1 + 2)
 print("Exercise 3: " + "Bassam" + " " + "Alomari")
+
+# ============================================================
+# NEXT LESSON: Comments
+# ============================================================

@@ -82,5 +82,5 @@
 # [5] You MUST know data types to write correct code
 
 # ============================================================
-# NEXT LESSON: Variables (Practical - Actual Code)
+# NEXT LESSON: Data Types (Practical)
 # ============================================================

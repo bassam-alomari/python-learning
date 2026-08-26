@@ -169,5 +169,5 @@ print("=" * 50)
 # Each type will be covered in detail in future lessons.
 
 # ============================================================
-# NEXT LESSON: Strings (Part 1) - Full Details
+# NEXT LESSON: Variables (Fundamentals)
 # ============================================================
