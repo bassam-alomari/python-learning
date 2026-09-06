@@ -18,7 +18,7 @@
 #
 # Write your answer below:
 
-# (python is interpriter languge and have a many librarys and used in all things)
+# (Python is an interpreter language, it has many libraries, and it is used in all things)
 
 
 # ------------------------------------------------------------
@@ -29,7 +29,7 @@
 #
 # Write your answer below:
 
-# (Interpreter write a code line by line and execute line by line and stop on first line have error not all code // compiler read all code and execute if have error code is not execute)
+# (An interpreter writes code line by line and executes it line by line, and stops on the first line that has an error, not all the code. A compiler reads all the code and executes it; if there is an error, the code is not executed)
 
 
 # ------------------------------------------------------------
@@ -40,7 +40,7 @@
 #
 # Write your answer below:
 
-# (easy to learn and easy to setup and قربية للغة الحقيقية and have a multupe laybrares and use in any platform )
+# (easy to learn and easy to setup and قربية للغة الحقيقية and have multiple libraries and used on any platform)
 
 
 # ------------------------------------------------------------
@@ -51,7 +51,7 @@
 #
 # Write your answer below:
 
-# (Web Development and game Development and in part of apps and in ai)
+# (Web Development and Game Development and part of apps and AI)
 
 
 # ------------------------------------------------------------
@@ -75,7 +75,7 @@
 #
 # Write your answer below:
 
-# (nasa , microsoft , apple , open ai)
+# (NASA, Microsoft, Apple, OpenAI)
 
 
 # ============================================================
