@@ -118,6 +118,23 @@ print(myAwesomeList)
 print("=" * 50)
 
 # ============================================================
+# NESTED LIST + NESTED INDEXING
+# ============================================================
+# We can put a full list INSIDE another list (a Nested List).
+# To access an item inside the nested list we use
+# Two Indices: myList[outer][inner].
+
+myAwesomeList = ["One", "Two", ["A", "B", "C"]]
+
+print(myAwesomeList[2])       # The nested list
+# Output: ['A', 'B', 'C']
+
+print(myAwesomeList[2][1])    # "B" (inside the nested list)
+# Output: B
+
+print("=" * 50)
+
+# ============================================================
 # SUMMARY
 # ============================================================
 # [1] List -> items in Square Brackets []
