@@ -44,6 +44,21 @@ print(myFriends[7])
 print(myFriends[7][2])
 # Output: Ali  (Nested Indexing)
 
+# ------------------------------------------------------------
+# NESTED INDEXING WITH NEGATIVE INDEX
+# ------------------------------------------------------------
+# Just like normal lists, we can use a negative index
+# to reach a nested item from the END.
+# myFriends[7][-1] -> the LAST item inside the nested list
+# myFriends[-1][0] -> the first item of the LAST list
+# ^ (myFriends[-1] is the last item which is the nested list)
+
+print(myFriends[7][-1])
+# Output: Ali
+
+print(myFriends[-1][0])
+# Output: Haytham
+
 print("=" * 50)
 
 # ============================================================
