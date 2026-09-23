@@ -91,6 +91,26 @@ print(myTuple5)
 print("=" * 50)
 
 # ============================================================
+# NESTED ITEMS INSIDE A TUPLE (TUPLE + NESTED INDEXING)
+# ============================================================
+# A Tuple can hold a List (or another Tuple) as ONE item.
+# You can ACCESS the items inside it using Nested Indexing
+# exactly like we did with Lists.
+
+myNestedTuple = (1, 2, 3, ["A", "B", "C"])
+print(myNestedTuple[3])
+# Output: ['A', 'B', 'C']
+
+print(myNestedTuple[3][2])
+# Output: 'C'  (Nested Indexing inside the Tuple)
+
+myNestedTuple2 = (1, 2, (10, 20, 30))
+print(myNestedTuple2[2][1])
+# Output: 20  (Nested Tuple inside a Tuple)
+
+print("=" * 50)
+
+# ============================================================
 # SUMMARY
 # ============================================================
 # [1] Tuple is written with ( ) instead of [ ]
