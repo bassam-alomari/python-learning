@@ -2,7 +2,7 @@
 
 # Hey there, I'm Bassam Alomari 👋
 
-### CS Student | Network Engineering Trainee | Python Developer
+### CS Student | Network Engineering Trainee | Python & C++ Developer
 
 ![Profile Views](https://komarev.com/ghpvc/?username=bassam-alomari&style=flat&color=blue&label=PROFILE+VIEWS)
 
