@@ -140,6 +140,32 @@ print("=" * 50)
 # [7] reverse()     -> reverse the order (not sorting)
 # [8] Nested Indexing -> myList[7][2] to access nested item
 
+print("=" * 50)
+
+# ============================================================
+# BONUS: NESTED INDEXING WITH NEGATIVE INDEX
+# ============================================================
+# We can also use a NEGATIVE index to reach a nested item
+# starting from the END of the list.
+# myList[-1]   -> the LAST item (which is the nested list)
+# myList[-1][0]-> the FIRST item inside the LAST nested list
+# myList[7][-1]-> the LAST item inside the nested list at index 7
+
+myFriends = ["Osama", "Ahmed", "Sayed", "Alaa", 100, 150.2, True]
+myOldFriends = ["Haytham", "Samah", "Ali"]
+myFriends.append(myOldFriends)
+
+print(myFriends[-1][0])
+# Output: Haytham  (first item of the LAST nested list)
+
+print(myFriends[7][-1])
+# Output: Ali  (last item inside the nested list at index 7)
+
+print(myFriends[-1][-1])
+# Output: Ali  (last item of the last nested list)
+
+print("=" * 50)
+
 # ============================================================
 # NEXT LESSON: List Methods (Part 2)
 # ============================================================
