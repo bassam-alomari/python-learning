@@ -13,7 +13,7 @@
 ## 🧑‍💻 About Me
 
 - 🎓 CS student at **JUST** (Jordan University of Science and Technology)
-- 🌐 Currently doing **Network Engineering field training**
+- 🌐 Trained **Network Engineering field training**
 - 🔐 Studying **Cryptography**, currently digging into RSA encryption
 - 🐍 Learning **Python** and solving DSA problems (NeetCode 150 / LeetCode)
 - 💡 I like understanding *why* something works before I copy a ready-made solution — that's how I approached my C++ IPC project (pipes, fork, parallel computation)
