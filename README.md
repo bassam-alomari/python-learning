@@ -7,7 +7,10 @@ run, on every machine.
 **Run anything:**
 
 ```bash
-python Projects/project-38-the-bookshop.py
+python Projects/project-38-the-bookshop.py          # a lesson
+python Projects/project-39-the-bookshop-cli.py add-book Dune "Frank Herbert" --copies 3
+python Projects/project-39-the-bookshop-cli.py report
+echo $?
 ```
 
 Nothing here uses `input()`. That is deliberate: a file you cannot run without a

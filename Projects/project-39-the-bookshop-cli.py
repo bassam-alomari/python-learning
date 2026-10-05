@@ -18,7 +18,11 @@
 # will be identical on every machine, forever.
 #
 # Run it:  python project-39-the-bookshop-cli.py
-# Run the session:  python project-39-the-bookshop-cli.py report
+# Then drive it for real, from a shell:
+#   python project-39-the-bookshop-cli.py add-book Dune "Frank Herbert" --copies 3
+#   python project-39-the-bookshop-cli.py add-member Sara
+#   python project-39-the-bookshop-cli.py borrow Sara Dune --day 10
+#   python project-39-the-bookshop-cli.py report
 # ============================================================
 
 import argparse
@@ -432,6 +436,19 @@ def build_session(folder):
     run_cli(["add-member", "Sara", "--state", state])
     run_cli(["add-member", "Ali", "--state", state])
     return state
+
+
+# The one line that turns a lesson into a program.
+#
+#     python project-39-the-bookshop-cli.py                    -> the lesson
+#     python project-39-the-bookshop-cli.py report --state s   -> the CLI
+#
+# With no arguments the lesson below prints itself and finishes. With
+# arguments, this hands them straight to main() and exits with whatever
+# main() returned. Nothing below this point runs, so a real user never
+# sees a lesson printed at them by accident.
+if __name__ == "__main__" and len(sys.argv) > 1:
+    sys.exit(main(sys.argv[1:]))
 
 
 # ============================================================
