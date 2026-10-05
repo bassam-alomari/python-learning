@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 38 projects
+# Python Learning — 51 lessons, 39 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -38,6 +38,7 @@ becomes load-bearing:
 | 36 | algorithms and Big-O | knowing what your code costs |
 | 37 | edge cases, `unittest`, mocks, tracebacks, `pdb` | trusting your own code |
 | 38 | the capstone: all of it at once | the ideas have to live together |
+| 39 | a `argparse` CLI, exit codes, stdout vs stderr | driving it from words, and still testing it |
 
 ---
 
@@ -68,6 +69,11 @@ trust on your own machine.
 The capstone. Classes, atomic JSON, CSV, a context manager, a memoised lookup,
 and a 36-test suite — in one file, working together.
 
+### 39 — `the-bookshop-cli.py`
+The same shop, driven from a terminal. Seven subcommands, three exit codes, data
+on stdout and complaints on stderr — and a 25-test suite that runs in-process,
+because `argv` is a list and a list is an ordinary argument.
+
 ---
 
 ## What each project is built to teach
@@ -95,10 +101,35 @@ change instead of reordering noise.
 garbage collector to close the handle. Use `with`, and run `python -W error` on
 your files to prove you have no leaks.
 
-**A context manager makes "save only if nothing broke" a language feature.**
+**a context manager makes "save only if nothing broke" a language feature.**
 `__enter__` loads, `__exit__` saves — but only when `exc_type is None`, and it
 returns `False` so the original exception still escapes. This is the `34` bug
 solved structurally rather than by remembering.
+
+**`argv` is just a list of strings.** That single fact is what makes a terminal
+program testable: `main(["report", "--state", path])` is an ordinary function
+call. Project 39 runs its entire suite with no subprocess, no keyboard, and no
+flake. Never call `sys.exit()` inside `main()` — return the code, and let the
+last line of the file do the exiting.
+
+**The exit code is the part your shell actually reads.** Bash, `make` and every
+CI system branch on it; none of them read your error message. A program that
+prints an error and exits `0` is lying with a straight face. Convention here:
+`0` worked, `1` your program understood the command and refused it, `2` argparse
+could not understand the command at all.
+
+**The one trap in project 39 that costs real money.** If a shared option lives
+on the main parser *and* on every subparser, a value given before the command is
+parsed correctly and then **silently overwritten** by the subparser's default:
+
+```
+bookshop --state given.json report   ->   exit 0, uses shop.json
+```
+
+No warning, wrong file. The fix is `default=argparse.SUPPRESS` on the shared
+copy, so it only sets the attribute when it actually saw the flag. And never
+golden-test argparse's help text — it re-wraps itself to the terminal width, so
+assert on the exit code instead.
 
 **`assert` is documentation, not validation.** `python -O` deletes every `assert`
 in your program and your exit code becomes `0` while your check silently
@@ -136,7 +167,7 @@ were hunting. An **error** is a test that blew up before it could check anything
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 38 project files, in order
+Projects/                 39 project files, in order
 ```
 
 Each project follows one shape:
@@ -154,5 +185,6 @@ PART C   the solution, which actually produces it
 You start by learning that `print` is a function, and you finish by shipping a
 bookshop that refuses to save a corrupted state, exports a file that opens
 identically on Windows and Linux, proves a lookup is one step instead of four,
-and holds itself to 36 tests — none of which can tell you it passed unless it
-also demonstrates that it can fail.
+holds itself to 36 tests — none of which can tell you it passed unless it also
+demonstrates that it can fail — and can then be driven entirely from a command
+line, where the exit code is the part that actually tells the truth.
