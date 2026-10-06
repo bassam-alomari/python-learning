@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 39 projects
+# Python Learning — 51 lessons, 40 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -10,6 +10,7 @@ run, on every machine.
 python Projects/project-38-the-bookshop.py          # a lesson
 python Projects/project-39-the-bookshop-cli.py add-book Dune "Frank Herbert" --copies 3
 python Projects/project-39-the-bookshop-cli.py report
+python Projects/project-40-pytest-and-coverage.py   # runs pytest inside itself
 echo $?
 ```
 
@@ -22,7 +23,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 38 predecessors behind it, and every earlier idea has to still
+program that has 39 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -41,13 +42,14 @@ becomes load-bearing:
 | 36 | algorithms and Big-O | knowing what your code costs |
 | 37 | edge cases, `unittest`, mocks, tracebacks, `pdb` | trusting your own code |
 | 38 | the capstone: all of it at once | the ideas have to live together |
-| 39 | a `argparse` CLI, exit codes, stdout vs stderr | driving it from words, and still testing it |
+| 39 | an `argparse` CLI, exit codes, stdout vs stderr | driving it from words, and still testing it |
+| 40 | `pytest` fixtures and `parametrize`, line coverage | knowing what you have not tested |
 
 ---
 
 ## The projects worth reading
 
-If you only read five files, read these.
+If you only read seven files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -76,6 +78,12 @@ and a 36-test suite — in one file, working together.
 The same shop, driven from a terminal. Seven subcommands, three exit codes, data
 on stdout and complaints on stderr — and a 25-test suite that runs in-process,
 because `argv` is a list and a list is an ordinary argument.
+
+### 40 — `pytest-and-coverage.py`
+The file that runs the test runner. Fixtures, `parametrize`, and the four exit
+codes that matter — then `ast` and `trace` measure what actually ran, using
+nothing but the standard library. The answer comes back `100%` for a function
+that still crashes, which is the whole point.
 
 ---
 
@@ -164,13 +172,31 @@ negative numbers, duplicates, unknown names, a half-written file. What a program
 were hunting. An **error** is a test that blew up before it could check anything
 — far more dangerous, because it counts as neither pass nor failure.
 
+**pytest runs inside your own process.** `pytest.main([...])` returns an exit
+code instead of exiting, so one process can run a dozen suites, capture their
+output, and print its own results. Four codes cover everything: `0` green, `1`
+red, `5` nothing to run, `4` a flag pytest never heard of. One trap follows
+from running in-process: the test modules stay imported, so rewriting a file
+and running it a second time runs the *old* tests. A fresh file name per
+scenario — or a `sys.modules.pop()` — is the fix.
+
+**Line coverage counts lines, never paths.** `ast` says what *could* run,
+`trace` says what *did* run, and the difference is your homework list. Project
+40 computes `10 of 12 = 83%` with the standard library alone, and the same
+numbers come out of `coverage.py` — verified line for line, not approximately.
+
+**One hundred percent is still compatible with a broken function.** Every line
+of `average()` runs when you hand it a happy list, so it measures `5 of 5`.
+Then `average([])` dies with `ZeroDivisionError` — on a line that was already
+marked covered. A percentage is a spotlight, not a scoreboard.
+
 ---
 
 ## Layout
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 39 project files, in order
+Projects/                 40 project files, in order
 ```
 
 Each project follows one shape:
@@ -190,4 +216,6 @@ bookshop that refuses to save a corrupted state, exports a file that opens
 identically on Windows and Linux, proves a lookup is one step instead of four,
 holds itself to 36 tests — none of which can tell you it passed unless it also
 demonstrates that it can fail — and can then be driven entirely from a command
-line, where the exit code is the part that actually tells the truth.
+line, where the exit code is the part that actually tells the truth. Then you
+measure it line by line, get `100%`, and watch one unmeasured input break it
+anyway.
