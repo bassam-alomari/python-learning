@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 41 projects
+# Python Learning — 51 lessons, 42 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -12,6 +12,7 @@ python Projects/project-39-the-bookshop-cli.py add-book Dune "Frank Herbert" --c
 python Projects/project-39-the-bookshop-cli.py report
 python Projects/project-40-pytest-and-coverage.py   # runs pytest inside itself
 python Projects/project-41-packaging-a-wheel.py      # builds a wheel, pip installs it
+python Projects/project-42-sqlite-the-bookshop-db.py # a real database, in one file
 echo $?
 ```
 
@@ -24,7 +25,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 40 predecessors behind it, and every earlier idea has to still
+program that has 41 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -46,12 +47,13 @@ becomes load-bearing:
 | 39 | an `argparse` CLI, exit codes, stdout vs stderr | driving it from words, and still testing it |
 | 40 | `pytest` fixtures and `parametrize`, line coverage | knowing what you have not tested |
 | 41 | `pyproject.toml`, a wheel built by hand, offline `pip` | shipping it, and proving it arrived intact |
+| 42 | `sqlite3`, a database that is a real file | state that survives, and answers questions |
 
 ---
 
 ## The projects worth reading
 
-If you only read eight files, read these.
+If you only read nine files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -92,6 +94,16 @@ The file that ships it. `pyproject.toml` parsed by `tomllib`, a `.whl` built
 with `zipfile` and installed by `pip --no-index` with the network switched off,
 and a `RECORD` of sha256 digests you recompute yourself — change one byte and
 exactly one row breaks.
+
+### 42 — `sqlite-the-bookshop-db.py`
+The file that stops pretending. The bookshop's data finally leaves JSON for a
+real database — one file, opened by the standard library. It teaches the traps
+that cost real hours: a `SELECT` reports `rowcount == -1`, `SUM()` of an empty
+set is `NULL` not `0`, a string you build into SQL is code while a `?` is data,
+and SQLite will happily store `"not a number"` in an `INTEGER` column. Then it
+shows the planner's own report — `SCAN books` becoming `SEARCH books USING
+INDEX` — and closes the loop with a `LEFT JOIN` that rescues the member with no
+loans via `COALESCE`.
 
 ---
 
@@ -216,13 +228,41 @@ someone else can check is not integrity.
 in this lesson — and when they do not, the installed one is what every other
 tool believes.
 
+**A database is a file with rules, and the rules are data.** `sqlite3` opens a
+real file, and `PRAGMA table_info` hands the schema back as ordinary rows —
+name, type, `notnull`, default, primary key — so the structure of your data is
+queryable like the data itself. Three traps follow from how SQLite actually
+works. First, `rowcount` counts rows *changed*: an `INSERT` reports `1`, but a
+`SELECT` reports `-1`, because it changed nothing. Second, aggregates over an
+empty set are `NULL` — `COUNT()` returns `0`, but `SUM()`, `AVG()` and `MIN()`
+return `None`, and `COALESCE` is the rescue. Third, columns are a preference,
+not a cage: store `"not a number"` in an `INTEGER` column and SQLite keeps it
+as `TEXT`, which `typeof()` will happily confess.
+
+**A value is data, and a string you build is code.** `"SELECT ... WHERE title
+= '" + guess + "'"` turns `' OR 1=1 --` into a query that matches every row.
+The `?` placeholder sends the value separately, so the same string matches
+nothing. This is the one rule with no exception: never build SQL by
+concatenation.
+
+**The planner will tell you what it did.** `EXPLAIN QUERY PLAN` reports
+`SCAN books` before an index exists and `SEARCH books USING INDEX
+idx_books_title (title=?)` after — the same query, a different plan, and the
+proof that an index is a shortcut the planner can take, not a magic wand.
+
+**A transaction is all-or-nothing.** Rows you `INSERT` and never `commit` are
+gone after `rollback` — or after the connection closes. The file database
+proves it: reopen the file and only the committed rows are there. And the
+lesson's own database lives in a temporary folder that is deleted when the
+file finishes, so the course still leaves nothing behind.
+
 ---
 
 ## Layout
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 41 project files, in order
+Projects/                 42 project files, in order
 ```
 
 Each project follows one shape:
@@ -247,3 +287,8 @@ measure it line by line, get `100%`, and watch one unmeasured input break it
 anyway. Finally you build the `.whl` yourself, install it with the network
 switched off, and check its sha256 digests by hand — so the program that
 started as `print("Hello World")` is now something other people can install.
+Then you move the bookshop's data into a real database file, watch a `SELECT`
+report `-1` rows changed, rescue a `NULL` sum with `COALESCE`, and read the
+planner's own report as it swaps a scan for an index — so the state that
+survives is no longer a text file you have to trust, but a database that
+answers questions.
