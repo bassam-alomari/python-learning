@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 42 projects
+# Python Learning — 51 lessons, 41 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -11,6 +11,7 @@ python Projects/project-38-the-bookshop.py          # a lesson
 python Projects/project-39-the-bookshop-cli.py add-book Dune "Frank Herbert" --copies 3
 python Projects/project-39-the-bookshop-cli.py report
 python Projects/project-40-pytest-and-coverage.py   # runs pytest inside itself
+python Projects/project-41-packaging-a-wheel.py      # builds a wheel, pip installs it
 echo $?
 ```
 
@@ -23,7 +24,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 39 predecessors behind it, and every earlier idea has to still
+program that has 40 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -44,12 +45,13 @@ becomes load-bearing:
 | 38 | the capstone: all of it at once | the ideas have to live together |
 | 39 | an `argparse` CLI, exit codes, stdout vs stderr | driving it from words, and still testing it |
 | 40 | `pytest` fixtures and `parametrize`, line coverage | knowing what you have not tested |
+| 41 | `pyproject.toml`, a wheel built by hand, offline `pip` | shipping it, and proving it arrived intact |
 
 ---
 
 ## The projects worth reading
 
-If you only read seven files, read these.
+If you only read eight files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -84,6 +86,12 @@ The file that runs the test runner. Fixtures, `parametrize`, and the four exit
 codes that matter — then `ast` and `trace` measure what actually ran, using
 nothing but the standard library. The answer comes back `100%` for a function
 that still crashes, which is the whole point.
+
+### 41 — `packaging-a-wheel.py`
+The file that ships it. `pyproject.toml` parsed by `tomllib`, a `.whl` built
+with `zipfile` and installed by `pip --no-index` with the network switched off,
+and a `RECORD` of sha256 digests you recompute yourself — change one byte and
+exactly one row breaks.
 
 ---
 
@@ -190,13 +198,31 @@ of `average()` runs when you hand it a happy list, so it measures `5 of 5`.
 Then `average([])` dies with `ZeroDivisionError` — on a line that was already
 marked covered. A percentage is a spotlight, not a scoreboard.
 
+**A wheel is a zip you are allowed to open.** `.whl` means nothing to Python
+and everything to `zipfile`: your package plus a `name-version.dist-info`
+folder holding `METADATA`, `WHEEL`, `entry_points.txt` and `RECORD`. Build one
+by hand and `pip install --no-index` accepts it, because pip never needed a
+server — it needed a file. One rule the zip will not forgive: entry names use
+`/`, and `os.path.join` hands you `\` on Windows.
+
+**`RECORD` is the difference between a file and a promise.** Every row is a
+path, a sha256 and a size. Recompute them and the wheel proves it is unchanged;
+edit one byte inside it and exactly one row goes red. Integrity that only
+someone else can check is not integrity.
+
+**The version lives in three places and one of them is the truth.**
+`pyproject.toml`, `__version__` in the code, and
+`importlib.metadata.version()` reading the installed `.dist-info`. They agree
+in this lesson — and when they do not, the installed one is what every other
+tool believes.
+
 ---
 
 ## Layout
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 40 project files, in order
+Projects/                 41 project files, in order
 ```
 
 Each project follows one shape:
@@ -218,4 +244,6 @@ holds itself to 36 tests — none of which can tell you it passed unless it also
 demonstrates that it can fail — and can then be driven entirely from a command
 line, where the exit code is the part that actually tells the truth. Then you
 measure it line by line, get `100%`, and watch one unmeasured input break it
-anyway.
+anyway. Finally you build the `.whl` yourself, install it with the network
+switched off, and check its sha256 digests by hand — so the program that
+started as `print("Hello World")` is now something other people can install.
