@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 40 projects
+# Python Learning — 51 lessons, 42 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
