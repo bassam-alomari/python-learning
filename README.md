@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 42 projects
+# Python Learning — 51 lessons, 43 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -13,6 +13,7 @@ python Projects/project-39-the-bookshop-cli.py report
 python Projects/project-40-pytest-and-coverage.py   # runs pytest inside itself
 python Projects/project-41-packaging-a-wheel.py      # builds a wheel, pip installs it
 python Projects/project-42-sqlite-the-bookshop-db.py # a real database, in one file
+python Projects/project-43-threading-concurrent-customers.py # the shop serves many at once
 echo $?
 ```
 
@@ -25,7 +26,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 41 predecessors behind it, and every earlier idea has to still
+program that has 42 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -48,12 +49,13 @@ becomes load-bearing:
 | 40 | `pytest` fixtures and `parametrize`, line coverage | knowing what you have not tested |
 | 41 | `pyproject.toml`, a wheel built by hand, offline `pip` | shipping it, and proving it arrived intact |
 | 42 | `sqlite3`, a database that is a real file | state that survives, and answers questions |
+| 43 | `threading`, locks, daemons, the GIL | many customers at once, without losing an order |
 
 ---
 
 ## The projects worth reading
 
-If you only read nine files, read these.
+If you only read ten files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -104,6 +106,19 @@ and SQLite will happily store `"not a number"` in an `INTEGER` column. Then it
 shows the planner's own report — `SCAN books` becoming `SEARCH books USING
 INDEX` — and closes the loop with a `LEFT JOIN` that rescues the member with no
 loans via `COALESCE`.
+
+### 43 — `threading-concurrent-customers.py`
+The file that serves many customers at once. A `Thread` is a function running
+in parallel, `join()` is the only way to wait for it, and threads share memory
+— which is the danger. The lesson forces a real race with `Event`s: two
+threads both read `0`, both write `1`, and one increment is silently lost,
+because `counter += 1` is read, then write, and another thread can slip
+between. A `Lock` makes the pair indivisible and the answer `2`. Daemons die
+with the process — proven by a child process that starts a 5-second daemon and
+finishes in under two seconds — and `ThreadPoolExecutor.map` hands results
+back in submission order. The GIL means counting threads take turns, sleeping
+threads overlap, and the database from project 42 serves five concurrent
+customers through one locked connection.
 
 ---
 
@@ -256,13 +271,48 @@ proves it: reopen the file and only the committed rows are there. And the
 lesson's own database lives in a temporary folder that is deleted when the
 file finishes, so the course still leaves nothing behind.
 
+**A thread is a function running in parallel, and `join()` is the only way
+to wait for it.** `start()` returns immediately; `is_alive()` tells you
+whether the function is still running; `join()` blocks until it is done. A
+thread that is never joined is a thread you cannot trust to have finished.
+
+**Threads share memory, and that is the danger.** `counter += 1` is not one
+step: it is read, then write, and another thread can slip between the two.
+Project 43 forces that exact interleaving with `Event`s — both threads read
+`0`, both write `1`, and one increment is silently lost. A `Lock` makes the
+read-modify-write one indivisible step, and the answer becomes `2`. The race
+is not a theory: it is reproduced on every run, on purpose.
+
+**A daemon thread dies with the process.** It is a servant, not a partner:
+if `main` finishes first, the daemon is killed without warning. The lesson
+proves it with a child process that starts a 5-second daemon and finishes in
+under two seconds — the process did not wait, because daemons are not waited
+for. A daemon can still be woken and joined like any other thread, if someone
+sets its event.
+
+**`ThreadPoolExecutor.map` returns results in submission order.** The workers
+finish in whatever order the scheduler chooses; the results come back in the
+order you submitted them. That is the difference between a pool and a
+free-for-all.
+
+**The GIL lets exactly one thread run Python bytecode at a time.** Counting
+threads take turns — which is why a `Lock` around a counter is cheap and
+correct. Sleeping threads overlap, because `sleep` releases the GIL: two
+0.2-second naps in parallel finish in about half the time of two in sequence.
+I/O-bound threads do overlap; CPU-bound Python does not.
+
+**A SQLite connection belongs to the thread that made it.**
+`check_same_thread=False` says "I know better" — and the lock is exactly why
+you do. Project 43's closing task serves five concurrent customers through
+one connection, and every row lands.
+
 ---
 
 ## Layout
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 42 project files, in order
+Projects/                 43 project files, in order
 ```
 
 Each project follows one shape:
@@ -291,4 +341,9 @@ Then you move the bookshop's data into a real database file, watch a `SELECT`
 report `-1` rows changed, rescue a `NULL` sum with `COALESCE`, and read the
 planner's own report as it swaps a scan for an index — so the state that
 survives is no longer a text file you have to trust, but a database that
-answers questions.
+answers questions. Finally the shop serves many customers at once: threads
+share memory, one increment is lost to prove the race is real, a lock makes
+it indivisible, daemons die with the process, and the database from the
+previous lesson takes five concurrent orders through one locked connection —
+so the program that started as `print("Hello World")` now runs a shop that
+does not lose a single order.
