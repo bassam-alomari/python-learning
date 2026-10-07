@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 43 projects
+# Python Learning — 51 lessons, 44 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -14,6 +14,7 @@ python Projects/project-40-pytest-and-coverage.py   # runs pytest inside itself
 python Projects/project-41-packaging-a-wheel.py      # builds a wheel, pip installs it
 python Projects/project-42-sqlite-the-bookshop-db.py # a real database, in one file
 python Projects/project-43-threading-concurrent-customers.py # the shop serves many at once
+python Projects/project-44-http-the-bookshop-gets-a-web-api.py # the shop speaks HTTP
 echo $?
 ```
 
@@ -26,7 +27,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 42 predecessors behind it, and every earlier idea has to still
+program that has 43 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -50,12 +51,13 @@ becomes load-bearing:
 | 41 | `pyproject.toml`, a wheel built by hand, offline `pip` | shipping it, and proving it arrived intact |
 | 42 | `sqlite3`, a database that is a real file | state that survives, and answers questions |
 | 43 | `threading`, locks, daemons, the GIL | many customers at once, without losing an order |
+| 44 | `http.server`, `http.client`, JSON over HTTP | the bookshop gets a web API |
 
 ---
 
 ## The projects worth reading
 
-If you only read ten files, read these.
+If you only read eleven files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -119,6 +121,18 @@ finishes in under two seconds — and `ThreadPoolExecutor.map` hands results
 back in submission order. The GIL means counting threads take turns, sleeping
 threads overlap, and the database from project 42 serves five concurrent
 customers through one locked connection.
+
+### 44 — `http-the-bookshop-gets-a-web-api.py`
+The file that makes the bookshop speak HTTP. `http.server` with
+`BaseHTTPRequestHandler` answers requests: `GET /` returns plain text, `GET
+/books` returns JSON, `GET /books?title=Dune` filters by query parameter, and
+`POST /books` reads a JSON body to add a book. Status codes matter: `200`,
+`404`, `405`, `500`. The server binds to port 0 so the OS picks a free port,
+and `log_message` is redirected into a diary so stderr stays empty. Both
+`urllib.request` and `http.client` are used to prove the same conversation,
+and `server.shutdown()` plus `server_close()` releases the port. The diary
+shows that an error request logs twice — a small but real detail of the
+standard library.
 
 ---
 
@@ -306,13 +320,24 @@ I/O-bound threads do overlap; CPU-bound Python does not.
 you do. Project 43's closing task serves five concurrent customers through
 one connection, and every row lands.
 
+**A server is a socket with manners.** `http.server` with
+`BaseHTTPRequestHandler` turns a socket into an HTTP server: the request line
+is `METHOD path VERSION`, status codes are the whole answer (`200`, `404`,
+`405`, `500`), and JSON travels as `application/json`. Query parameters are
+just text after `?`, a `POST` carries its data in the body with
+`Content-Length`, and `http.client` proves the same conversation as
+`urllib.request`. The server binds to port 0 so the OS picks a free port,
+`log_message` is redirected into a diary to keep stderr empty, and
+`server.shutdown()` plus `server_close()` releases the port. The diary also
+shows that `send_error` logs twice — a real detail of the standard library.
+
 ---
 
 ## Layout
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 43 project files, in order
+Projects/                 44 project files, in order
 ```
 
 Each project follows one shape:
@@ -344,6 +369,9 @@ survives is no longer a text file you have to trust, but a database that
 answers questions. Finally the shop serves many customers at once: threads
 share memory, one increment is lost to prove the race is real, a lock makes
 it indivisible, daemons die with the process, and the database from the
-previous lesson takes five concurrent orders through one locked connection —
-so the program that started as `print("Hello World")` now runs a shop that
-does not lose a single order.
+previous lesson takes five concurrent orders through one locked connection.
+Then it learns to speak HTTP: a tiny server answers `GET /books` with JSON,
+filters with query parameters, accepts `POST /books` with a body, returns the
+right status codes, and shuts down cleanly — so the program that started as
+`print("Hello World")` is now a web API you can talk to with nothing but the
+standard library.
