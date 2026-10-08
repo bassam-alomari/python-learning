@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 45 projects
+# Python Learning — 51 lessons, 46 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -16,6 +16,7 @@ python Projects/project-42-sqlite-the-bookshop-db.py # a real database, in one f
 python Projects/project-43-threading-concurrent-customers.py # the shop serves many at once
 python Projects/project-44-http-the-bookshop-gets-a-web-api.py # the shop speaks HTTP
 python Projects/project-45-argparse-the-bookshop-cli.py # a CLI you can test without a keyboard
+python Projects/project-46-subprocess-the-bookshop-calls-out.py # calling out to other programs
 echo $?
 ```
 
@@ -28,7 +29,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 44 predecessors behind it, and every earlier idea has to still
+program that has 45 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -54,12 +55,13 @@ becomes load-bearing:
 | 43 | `threading`, locks, daemons, the GIL | many customers at once, without losing an order |
 | 44 | `http.server`, `http.client`, JSON over HTTP | the bookshop gets a web API |
 | 45 | `argparse` subcommands, flags, exit codes | a CLI that tests itself without a keyboard |
+| 46 | `subprocess`, exit codes read from the outside, `timeout=` | calling out to other programs without being hung by them |
 
 ---
 
 ## The projects worth reading
 
-If you only read twelve files, read these.
+If you only read thirteen files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -146,6 +148,20 @@ real lesson is the exit code: `0` worked, `1` the program refused the input,
 `2` argparse did not understand it. So the CLI is tested by calling
 `main(['unknown'])` with a list instead of a keyboard, and argparse's own
 usage message is captured so even a failing run leaves stderr empty.
+
+### 46 — `subprocess-the-bookshop-calls-out.py`
+The file that calls out. `subprocess.run` starts a child, waits for it, and
+hands back an object: `capture_output` turns **stdout and stderr into two
+strings**, `returncode` is the number the shell will read, and `check=True`
+turns a failure into an exception. A list is not a string — no shell parses
+it, so `"Dune 1965"` arrives whole instead of split at the space. `input=`
+feeds the child without a keyboard, `env=` hands it a copy of the
+environment, and `stderr=subprocess.STDOUT` merges the two pipes in write
+order. The lesson that matters is `timeout=`: a child that asks for five
+seconds is killed at three tenths, so a hung tool **cannot hang you**. The
+file closes by running project 39 as a subprocess — `report` exits `0`,
+`not-a-verb` exits `2` — proving from the outside what project 39 taught from
+the inside: the shell reads the exit code, not the words.
 
 ---
 
@@ -350,7 +366,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 45 project files, in order
+Projects/                 46 project files, in order
 ```
 
 Each project follows one shape:
