@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 44 projects
+# Python Learning — 51 lessons, 45 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -15,6 +15,7 @@ python Projects/project-41-packaging-a-wheel.py      # builds a wheel, pip insta
 python Projects/project-42-sqlite-the-bookshop-db.py # a real database, in one file
 python Projects/project-43-threading-concurrent-customers.py # the shop serves many at once
 python Projects/project-44-http-the-bookshop-gets-a-web-api.py # the shop speaks HTTP
+python Projects/project-45-argparse-the-bookshop-cli.py # a CLI you can test without a keyboard
 echo $?
 ```
 
@@ -27,7 +28,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 43 predecessors behind it, and every earlier idea has to still
+program that has 44 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -52,12 +53,13 @@ becomes load-bearing:
 | 42 | `sqlite3`, a database that is a real file | state that survives, and answers questions |
 | 43 | `threading`, locks, daemons, the GIL | many customers at once, without losing an order |
 | 44 | `http.server`, `http.client`, JSON over HTTP | the bookshop gets a web API |
+| 45 | `argparse` subcommands, flags, exit codes | a CLI that tests itself without a keyboard |
 
 ---
 
 ## The projects worth reading
 
-If you only read eleven files, read these.
+If you only read twelve files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -133,6 +135,17 @@ and `log_message` is redirected into a diary so stderr stays empty. Both
 and `server.shutdown()` plus `server_close()` releases the port. The diary
 shows that an error request logs twice — a small but real detail of the
 standard library.
+
+### 45 — `argparse-the-bookshop-cli.py`
+The file that closes the loop. `argparse` reads `sys.argv` and hands back an
+object with attributes: `store_true` flips a boolean, `choices` refuses what
+you did not plan for, `nargs='+'` collects a list, `type=int` turns text into
+numbers, and the help text is part of the contract. Subcommands split the
+verbs — `report`, `add-book`, `sell-book` — each with its own arguments. The
+real lesson is the exit code: `0` worked, `1` the program refused the input,
+`2` argparse did not understand it. So the CLI is tested by calling
+`main(['unknown'])` with a list instead of a keyboard, and argparse's own
+usage message is captured so even a failing run leaves stderr empty.
 
 ---
 
@@ -337,7 +350,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 44 project files, in order
+Projects/                 45 project files, in order
 ```
 
 Each project follows one shape:
