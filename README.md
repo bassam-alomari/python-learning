@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 46 projects
+# Python Learning — 51 lessons, 47 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -17,6 +17,7 @@ python Projects/project-43-threading-concurrent-customers.py # the shop serves m
 python Projects/project-44-http-the-bookshop-gets-a-web-api.py # the shop speaks HTTP
 python Projects/project-45-argparse-the-bookshop-cli.py # a CLI you can test without a keyboard
 python Projects/project-46-subprocess-the-bookshop-calls-out.py # calling out to other programs
+python Projects/project-47-re-the-bookshop-finds-things.py # patterns over the data
 echo $?
 ```
 
@@ -29,7 +30,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 45 predecessors behind it, and every earlier idea has to still
+program that has 46 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -56,12 +57,13 @@ becomes load-bearing:
 | 44 | `http.server`, `http.client`, JSON over HTTP | the bookshop gets a web API |
 | 45 | `argparse` subcommands, flags, exit codes | a CLI that tests itself without a keyboard |
 | 46 | `subprocess`, exit codes read from the outside, `timeout=` | calling out to other programs without being hung by them |
+| 47 | `re`, patterns, groups, flags, `fullmatch` | reading structure out of free text |
 
 ---
 
 ## The projects worth reading
 
-If you only read thirteen files, read these.
+If you only read fourteen files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -162,6 +164,18 @@ seconds is killed at three tenths, so a hung tool **cannot hang you**. The
 file closes by running project 39 as a subprocess — `report` exits `0`,
 `not-a-verb` exits `2` — proving from the outside what project 39 taught from
 the inside: the shell reads the exit code, not the words.
+
+### 47 — `re-the-bookshop-finds-things.py`
+The file that reads between the lines. `re.search` finds a pattern anywhere,
+`re.match` anchors at the start, and `re.fullmatch` demands the whole string
+— which is the difference between noticing an ISBN and validating one.
+Parentheses carve the text into groups read back with `group()`, named
+groups read by name instead of by number, `re.findall` returns every match
+at once, `re.sub` rewrites the text, and `re.split` splits on a pattern
+rather than a string. The traps are the classics: an unescaped `.` is any
+character at all, so `4.99` matches `4x99`; and a pattern must be a raw
+string or Python eats the backslashes first. It closes by validating a real
+ISBN-13 with one compiled pattern used three ways.
 
 ---
 
@@ -366,7 +380,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 46 project files, in order
+Projects/                 47 project files, in order
 ```
 
 Each project follows one shape:
