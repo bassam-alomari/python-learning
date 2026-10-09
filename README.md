@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 48 projects
+# Python Learning — 51 lessons, 49 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -19,6 +19,7 @@ python Projects/project-45-argparse-the-bookshop-cli.py # a CLI you can test wit
 python Projects/project-46-subprocess-the-bookshop-calls-out.py # calling out to other programs
 python Projects/project-47-re-the-bookshop-finds-things.py # patterns over the data
 python Projects/project-48-pathlib-the-bookshop-organises-its-shelf.py # paths as objects
+python Projects/project-49-dataclasses-the-bookshop-makes-records.py # records that validate themselves
 echo $?
 ```
 
@@ -31,7 +32,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 47 predecessors behind it, and every earlier idea has to still
+program that has 48 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -60,12 +61,13 @@ becomes load-bearing:
 | 46 | `subprocess`, exit codes read from the outside, `timeout=` | calling out to other programs without being hung by them |
 | 47 | `re`, patterns, groups, flags, `fullmatch` | reading structure out of free text |
 | 48 | `pathlib`, `Path` objects, pure paths, `glob` | paths as data instead of strings |
+| 49 | `dataclasses`, defaults, `frozen`, `__post_init__` | records that validate themselves |
 
 ---
 
 ## The projects worth reading
 
-If you only read fifteen files, read these.
+If you only read sixteen files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -193,6 +195,19 @@ filesystem already knows, `glob` selects by pattern, `rename` moves the
 bytes, and the shelf writes its own index. The rule the file keeps: it
 never prints an absolute path, because a path on this machine is not the
 same path on yours.
+
+### 49 — `dataclasses-the-bookshop-makes-records.py`
+The file that stops writing boilerplate. `@dataclass` reads the type hints
+and writes `__init__`, `__repr__` and `__eq__`, so two records with the
+same fields compare equal without one line of comparison code. The traps
+arrive immediately: a default field cannot precede a required one, and a
+plain `[]` default means one list shared by every instance —
+`field(default_factory=list)` is the fix. `frozen=True` makes the record
+immutable and hashable, `__post_init__` runs right after `__init__` and
+refuses a zero-day loan, `order=True` makes records sortable, and
+`field(repr=False)` hides a field from the repr without making it
+disappear. It closes by turning a list of loans into a list of
+dictionaries with `asdict`, one call per record, ready to be written out.
 
 ---
 
@@ -397,7 +412,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 48 project files, in order
+Projects/                 49 project files, in order
 ```
 
 Each project follows one shape:
