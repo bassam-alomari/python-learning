@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 47 projects
+# Python Learning — 51 lessons, 48 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -18,6 +18,7 @@ python Projects/project-44-http-the-bookshop-gets-a-web-api.py # the shop speaks
 python Projects/project-45-argparse-the-bookshop-cli.py # a CLI you can test without a keyboard
 python Projects/project-46-subprocess-the-bookshop-calls-out.py # calling out to other programs
 python Projects/project-47-re-the-bookshop-finds-things.py # patterns over the data
+python Projects/project-48-pathlib-the-bookshop-organises-its-shelf.py # paths as objects
 echo $?
 ```
 
@@ -30,7 +31,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 46 predecessors behind it, and every earlier idea has to still
+program that has 47 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -58,12 +59,13 @@ becomes load-bearing:
 | 45 | `argparse` subcommands, flags, exit codes | a CLI that tests itself without a keyboard |
 | 46 | `subprocess`, exit codes read from the outside, `timeout=` | calling out to other programs without being hung by them |
 | 47 | `re`, patterns, groups, flags, `fullmatch` | reading structure out of free text |
+| 48 | `pathlib`, `Path` objects, pure paths, `glob` | paths as data instead of strings |
 
 ---
 
 ## The projects worth reading
 
-If you only read fourteen files, read these.
+If you only read fifteen files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -176,6 +178,21 @@ rather than a string. The traps are the classics: an unescaped `.` is any
 character at all, so `4.99` matches `4x99`; and a pattern must be a raw
 string or Python eats the backslashes first. It closes by validating a real
 ISBN-13 with one compiled pattern used three ways.
+
+### 48 — `pathlib-the-bookshop-organises-its-shelf.py`
+The file that stops passing paths around as strings. A `Path` is one object
+with many pieces — `name`, `stem`, `suffix`, `parent`, `parts` — and `/`
+joins a child path without any concatenation. `with_suffix` and `with_name`
+return a rewritten path and touch nothing on disk. Pure paths prove the
+logic is separate from the machine: `PureWindowsPath` joins with a
+backslash, `PurePosixPath` joins with a slash, same code, different
+separator. Then it opens a real folder created and deleted inside
+`tempfile`: `write_text` and `read_text` name their encoding so a round-trip
+`Café` survives, `is_file`, `is_dir` and `exists` answer questions the
+filesystem already knows, `glob` selects by pattern, `rename` moves the
+bytes, and the shelf writes its own index. The rule the file keeps: it
+never prints an absolute path, because a path on this machine is not the
+same path on yours.
 
 ---
 
@@ -380,7 +397,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 47 project files, in order
+Projects/                 48 project files, in order
 ```
 
 Each project follows one shape:
