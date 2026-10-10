@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 50 projects
+# Python Learning — 51 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -21,6 +21,7 @@ python Projects/project-47-re-the-bookshop-finds-things.py # patterns over the d
 python Projects/project-48-pathlib-the-bookshop-organises-its-shelf.py # paths as objects
 python Projects/project-49-dataclasses-the-bookshop-makes-records.py # records that validate themselves
 python Projects/project-50-logging-the-bookshop-keeps-a-log.py # a log that never touches stderr
+python Projects/project-51-contextlib-the-bookshop-opens-and-closes.py # with-statements you write yourself
 echo $?
 ```
 
@@ -33,7 +34,7 @@ everything it teaches.
 ## Why this course exists
 
 Most Python tutorials stop at `print("Hello World")`. This one ends with a
-program that has 49 predecessors behind it, and every earlier idea has to still
+program that has 50 predecessors behind it, and every earlier idea has to still
 be true inside it.
 
 The progression is deliberate, and each project is where the previous idea
@@ -64,12 +65,13 @@ becomes load-bearing:
 | 48 | `pathlib`, `Path` objects, pure paths, `glob` | paths as data instead of strings |
 | 49 | `dataclasses`, defaults, `frozen`, `__post_init__` | records that validate themselves |
 | 50 | `logging`, levels, handlers, `propagate` | a log you can test instead of read |
+| 51 | `contextmanager`, `suppress`, `redirect_*`, `ExitStack` | cleanup you can trust, every time |
 
 ---
 
 ## The projects worth reading
 
-If you only read seventeen files, read these.
+If you only read eighteen files, read these.
 
 ### 33 — `library-management-system.py`
 Functions only: defaults, immutability, boundary checks. The discipline of
@@ -224,6 +226,22 @@ time down with `formatTime`. A child logger silently propagates to its
 parent until `propagate = False` stops the climb, `logger.exception`
 keeps the whole traceback inside a single record, and the root logger
 is left with no handlers at all — the course's rule, kept one more time.
+
+### 51 — `contextlib-the-bookshop-opens-and-closes.py`
+The file that makes cleanup a promise. `@contextmanager` turns a generator
+into a with-statement: everything before `yield` runs on the way in, and
+everything after runs on the way out — **even when the body raises**, the
+close half still fires. `suppress` swallows only the exception types you
+name, so a missing file is silence and a wrong exception still escapes.
+`redirect_stdout` and `redirect_stderr` point the streams at `StringIO`
+buffers, proving the course rule one more time: stderr can be captured
+and asserted on instead of trusted. `ExitStack` fans one block out over
+many managed resources and closes them **last-in first-out**, `closing`
+gives a plain `close()` a with-statement for objects that **only have
+close()** and no `__enter__`, and `nullcontext` is the no-op placeholder
+that always works. The audit at the end nests redirects, a shelf and a
+suppress inside one `ExitStack`, and asserts both streams are restored
+before the file ends.
 
 ---
 
@@ -428,7 +446,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 
 ```
 python-learning-course/   51 lesson files, in order
-Projects/                 50 project files, in order
+Projects/                 51 project files, in order
 ```
 
 Each project follows one shape:
