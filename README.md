@@ -1,4 +1,4 @@
-# Python Learning — 51 lessons, 51 projects
+# Python Learning — 52 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -22,6 +22,7 @@ python Projects/project-48-pathlib-the-bookshop-organises-its-shelf.py # paths a
 python Projects/project-49-dataclasses-the-bookshop-makes-records.py # records that validate themselves
 python Projects/project-50-logging-the-bookshop-keeps-a-log.py # a log that never touches stderr
 python Projects/project-51-contextlib-the-bookshop-opens-and-closes.py # with-statements you write yourself
+python python-learning-course/52-for-loop-on-dictionaries.py # looping over keys, values, items()
 echo $?
 ```
 
@@ -445,7 +446,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   51 lesson files, in order
+python-learning-course/   52 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
