@@ -1,4 +1,4 @@
-# Python Learning — 54 lessons, 51 projects
+# Python Learning — 55 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -25,6 +25,7 @@ python Projects/project-51-contextlib-the-bookshop-opens-and-closes.py # with-st
 python python-learning-course/52-for-loop-on-dictionaries.py # looping over keys, values, items()
 python python-learning-course/53-nested-loops.py  # for inside for: people and their skills
 python python-learning-course/54-loop-control-continue-break-pass.py # skip, stop, and the placeholder
+python python-learning-course/55-advanced-dictionary-loop.py # dict inside dict, two items() loops
 echo $?
 ```
 
@@ -448,7 +449,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   54 lesson files, in order
+python-learning-course/   55 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
