@@ -1,4 +1,4 @@
-# Python Learning — 56 lessons, 51 projects
+# Python Learning — 57 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -27,6 +27,7 @@ python python-learning-course/53-nested-loops.py  # for inside for: people and t
 python python-learning-course/54-loop-control-continue-break-pass.py # skip, stop, and the placeholder
 python python-learning-course/55-advanced-dictionary-loop.py # dict inside dict, two items() loops
 python python-learning-course/56-functions-and-return.py # write once, call anywhere, give values back
+python python-learning-course/57-parameters-and-arguments.py # slots in the def, values in the call
 echo $?
 ```
 
@@ -450,7 +451,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   56 lesson files, in order
+python-learning-course/   57 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
