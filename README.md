@@ -1,4 +1,4 @@
-# Python Learning — 61 lessons, 51 projects
+# Python Learning — 62 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -32,6 +32,7 @@ python python-learning-course/58-packing-and-unpacking-arguments.py # star gathe
 python python-learning-course/59-default-parameters.py  # optional slots, and the mutable-default trap
 python python-learning-course/60-packing-unpacking-keyword-arguments.py # **kwargs gathers keywords into a dict, **dict spreads them back
 python python-learning-course/61-packing-unpacking-in-action.py # one def with name + *skills + **progress, every call shape, and the nesting trap
+python python-learning-course/62-scope-global-and-local.py # global vs local, priority, the global keyword, and mutation vs assignment
 echo $?
 ```
 
@@ -455,7 +456,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   61 lesson files, in order
+python-learning-course/   62 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
