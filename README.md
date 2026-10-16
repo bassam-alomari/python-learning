@@ -1,4 +1,4 @@
-# Python Learning — 63 lessons, 51 projects
+# Python Learning — 64 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -34,6 +34,7 @@ python python-learning-course/60-packing-unpacking-keyword-arguments.py # **kwar
 python python-learning-course/61-packing-unpacking-in-action.py # one def with name + *skills + **progress, every call shape, and the nesting trap
 python python-learning-course/62-scope-global-and-local.py # global vs local, priority, the global keyword, and mutation vs assignment
 python python-learning-course/63-recursion-collapse-consecutive-duplicates.py # base case + smaller step, tracing every frame, and depth == len(word)
+python python-learning-course/64-lambda-anonymous-function.py  # one expression, no def, and temporary functions passed around
 echo $?
 ```
 
@@ -457,7 +458,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   63 lesson files, in order
+python-learning-course/   64 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
