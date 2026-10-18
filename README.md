@@ -1,4 +1,4 @@
-# Python Learning — 68 lessons, 51 projects
+# Python Learning — 69 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -39,6 +39,7 @@ python python-learning-course/65-file-handling-open-and-modes.py # open() with r
 python python-learning-course/66-file-reading-read-readline-readlines.py # the file object, read()/readline()/readlines(), the for loop, and close()
 python python-learning-course/67-file-writing-write-writelines.py # write() and writelines(), the newline you add yourself, and the write cursor in w vs a
 python python-learning-course/68-file-tell-seek-and-os-remove.py # tell(), seek(offset), read(size) with the cursor climbing, in-place edits with r+, and os.remove()
+python python-learning-course/69-built-in-functions-all-any-bin-id.py # all() and any() truth checks, bin()'s 0b prefix, and id() for identity -- comparisons only, never raw addresses
 echo $?
 ```
 
@@ -462,7 +463,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   68 lesson files, in order
+python-learning-course/   69 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
