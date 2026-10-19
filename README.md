@@ -1,4 +1,4 @@
-# Python Learning — 72 lessons, 51 projects
+# Python Learning — 73 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -43,6 +43,7 @@ python python-learning-course/69-built-in-functions-all-any-bin-id.py # all() an
 python python-learning-course/70-built-in-functions-sum-round-range-print.py # sum(), round() with half-to-even, range(start, stop, step), and print()'s sep and end
 python python-learning-course/71-built-in-functions-abs-pow-min-max-slice.py # abs(), pow() with the optional modulo, min()/max() on numbers and text, and slice() as a reusable object
 python python-learning-course/72-map-function.py # map(function, iterable) -- the lazy map object, def or lambda inside it, and the one-liner that replaces the long loop
+python python-learning-course/73-filter-function.py # filter(function, iterable) -- keep what passes the test, drop the falsy, startswith() name filtering, and filter(None)
 echo $?
 ```
 
@@ -466,7 +467,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   72 lesson files, in order
+python-learning-course/   73 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
