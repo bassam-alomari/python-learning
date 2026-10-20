@@ -1,4 +1,4 @@
-# Python Learning — 75 lessons, 51 projects
+# Python Learning — 76 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -46,6 +46,7 @@ python python-learning-course/72-map-function.py # map(function, iterable) -- th
 python python-learning-course/73-filter-function.py # filter(function, iterable) -- keep what passes the test, drop the falsy, startswith() name filtering, and filter(None)
 python python-learning-course/74-reduce-function.py # reduce() from functools -- fold a list into one value, two elements at a time, with lambda rules and an optional start
 python python-learning-course/75-enumerate-help-reversed.py # enumerate()'s automatic counter with start=, help()'s on-the-spot manual, and reversed()'s backwards iterator
+python python-learning-course/76-modules-import-basics.py # what a module is, the standard library (math/os/random/sys), and the four import styles: import, from, as, and star
 echo $?
 ```
 
@@ -469,7 +470,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   75 lesson files, in order
+python-learning-course/   76 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
