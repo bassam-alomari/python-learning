@@ -1,4 +1,4 @@
-# Python Learning — 78 lessons, 51 projects
+# Python Learning — 79 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -49,6 +49,7 @@ python python-learning-course/75-enumerate-help-reversed.py # enumerate()'s auto
 python python-learning-course/76-modules-import-basics.py # what a module is, the standard library (math/os/random/sys), and the four import styles: import, from, as, and star
 python python-learning-course/77-create-your-own-module.py # write your own .py module (elzero.py), import it from main, call through the dot, and alias around name collisions
 python python-learning-course/78-install-external-packages.py # module vs package (file vs folder), the three pip commands, and the termcolor practical: colored ANSI text in the terminal
+python python-learning-course/79-date-and-time-datetime.py # now() checked by shape never by value, extracting fields, MINYEAR/MAXYEAR, datetime.time, building 1980-10-10 10:45:55, and spans with timedelta
 echo $?
 ```
 
@@ -472,7 +473,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   78 lesson files, in order
+python-learning-course/   79 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
