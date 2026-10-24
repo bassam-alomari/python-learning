@@ -1,4 +1,4 @@
-# Python Learning — 86 lessons, 51 projects
+# Python Learning — 87 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -57,6 +57,7 @@ python python-learning-course/83-decorators.py # first-class functions, the nest
 python python-learning-course/84-decorators-with-parameters.py # the TypeError mismatch on argument-taking functions, the *args/**kwargs forwarding fix, keyword calls, any-signature decorators, and stacked @ layers with bottom-up order
 python python-learning-course/85-speed-test-decorator.py # time.time() start/end measurement inside a decorator, the five-step recipe, boolean-only timing reports, and a 20,000-iteration loop timed end to end
 python python-learning-course/86-zip-parallel-iterables.py # pairing several iterables into tuples, the golden shortest-list rule, one-loop unpacking over nums/names/skills, dict rebuilding, and unzip with zip(*)
+python python-learning-course/87-image-processing-pillow.py # Pillow from a sandbox-made 200x120 red PNG: crop box math, convert("L") luminance, resize/rotate, ImageFilter, ImageEnhance brightness, save and reopen
 echo $?
 ```
 
@@ -480,7 +481,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   86 lesson files, in order
+python-learning-course/   87 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
