@@ -1,4 +1,4 @@
-# Python Learning — 91 lessons, 51 projects
+# Python Learning — 92 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -62,6 +62,7 @@ python python-learning-course/88-docstrings-vs-comments.py # triple-quote docstr
 python python-learning-course/89-pylint-code-quality.py # Pylint as a Linter: pip install, pylint my_file.py, the rating out of 10, the detailed report (unused variables, bad names, missing docstrings), and the fix-until-10/10 workflow on sandbox files
 python python-learning-course/90-errors-and-exceptions-raising.py # Syntax Errors vs runtime Exceptions, the raise keyword with custom messages, ValueError and TypeError, the type-check pattern, and proof that raise stops the function
 python python-learning-course/91-exceptions-handling-try-except-else-finally.py # the full handling structure: catch without crashing, specific except blocks per error type, else on success only, finally always, and file cleanup in finally
+python python-learning-course/92-exceptions-handling-advanced-example.py # the file-open program with 5 tries: while + try/except/else/finally, FileNotFoundError caught and decremented, read on success, close in finally, All Tries Done on exhaustion
 echo $?
 ```
 
@@ -485,7 +486,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   91 lesson files, in order
+python-learning-course/   92 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
