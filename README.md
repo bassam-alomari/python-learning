@@ -1,4 +1,4 @@
-# Python Learning — 93 lessons, 51 projects
+# Python Learning — 94 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -64,6 +64,7 @@ python python-learning-course/90-errors-and-exceptions-raising.py # Syntax Error
 python python-learning-course/91-exceptions-handling-try-except-else-finally.py # the full handling structure: catch without crashing, specific except blocks per error type, else on success only, finally always, and file cleanup in finally
 python python-learning-course/92-exceptions-handling-advanced-example.py # the file-open program with 5 tries: while + try/except/else/finally, FileNotFoundError caught and decremented, read on success, close in finally, All Tries Done on exhaustion
 python python-learning-course/93-debugging-code.py # debugging step by step: breakpoint inspection, F10 Step Over, F11 Step Into, F5 Continue, trace a calculation bug and verify the fix
+python python-learning-course/94-type-hinting.py # parameter types with : and return types with ->, annotations as metadata, Python's dynamic runtime, editor help, and explicit validation
 echo $?
 ```
 
@@ -487,7 +488,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   93 lesson files, in order
+python-learning-course/   94 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
