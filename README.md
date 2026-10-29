@@ -1,4 +1,4 @@
-# Python Learning — 98 lessons, 51 projects
+# Python Learning — 99 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -69,6 +69,7 @@ python python-learning-course/95-regular-expressions.py # RegEx search, validati
 python python-learning-course/96-regex-quantifiers.py # quantifiers *, +, ?, {n}, {n,m}; grouped and greedy/lazy repetition; practical phone pattern, part-by-part explanation, and tester cases
 python python-learning-course/97-regex-character-classes-practice.py # character classes and ranges, negation with ^, custom hyphen/space, pause-and-solve challenge then [A-Z0-9-]+ solution explained step by step
 python python-learning-course/98-regex-assertions-email-pattern.py # ^ and $ anchors, whole-string and multiline behavior, an explained email-shape regex with boundary tests, captures, and validation limits
+python python-learning-course/99-regex-or-escaping-groups-urls.py # RegEx OR with |, escaping metacharacters, capturing/non-capturing groups, optional http/https and www URL shapes, and tester cases
 echo $?
 ```
 
@@ -492,7 +493,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   98 lesson files, in order
+python-learning-course/   99 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
