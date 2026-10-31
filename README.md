@@ -1,4 +1,4 @@
-# Python Learning — 104 lessons, 51 projects
+# Python Learning — 105 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -75,6 +75,7 @@ python python-learning-course/101-re-split-and-sub.py # re.split on whitespace/p
 python python-learning-course/102-regex-groups-flags-final.py # URL capture groups for protocol/host/port/path; IGNORECASE, MULTILINE and DOTALL flags; final Regex lesson
 python python-learning-course/103-oop-introduction-classes-objects.py # OOP as a programming paradigm; classes as blueprints, objects with attributes and methods, and multiple independent instances
 python python-learning-course/104-class-syntax-init-self.py # define PascalCase classes, initialize instances with __init__, use self for attributes/methods, compare structured classes and flexible dictionaries
+python python-learning-course/105-instance-attributes.py # per-instance attributes bound with self in __init__, pass member data at instantiation, access by dot, combine full names, prove independent object state
 echo $?
 ```
 
@@ -498,7 +499,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   104 lesson files, in order
+python-learning-course/   105 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
