@@ -1,4 +1,4 @@
-# Python Learning — 106 lessons, 51 projects
+# Python Learning — 107 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -77,6 +77,7 @@ python python-learning-course/103-oop-introduction-classes-objects.py # OOP as a
 python python-learning-course/104-class-syntax-init-self.py # define PascalCase classes, initialize instances with __init__, use self for attributes/methods, compare structured classes and flexible dictionaries
 python python-learning-course/105-instance-attributes.py # per-instance attributes bound with self in __init__, pass member data at instantiation, access by dot, combine full names, prove independent object state
 python python-learning-course/106-instance-methods.py # instance methods use self, combine full names, select Mr/Mrs by gender, and call full_name from greeting
+python python-learning-course/107-class-attributes.py # shared class attributes vs instance data, blocked first-name validation, class-level users counter, shadowing, and decrement on object finalization
 echo $?
 ```
 
@@ -500,7 +501,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   106 lesson files, in order
+python-learning-course/   107 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
