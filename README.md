@@ -1,4 +1,4 @@
-# Python Learning — 108 lessons, 51 projects
+# Python Learning — 109 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -79,6 +79,7 @@ python python-learning-course/105-instance-attributes.py # per-instance attribut
 python python-learning-course/106-instance-methods.py # instance methods use self, combine full names, select Mr/Mrs by gender, and call full_name from greeting
 python python-learning-course/107-class-attributes.py # shared class attributes vs instance data, blocked first-name validation, class-level users counter, shadowing, and decrement on object finalization
 python python-learning-course/108-class-and-static-methods.py # compare instance self, @classmethod cls for shared state, and @staticmethod independent helpers
+python python-learning-course/109-magic-methods-str-len.py # dunder methods called automatically; customize object text with __str__ and len() with __len__; inspect built-in objects
 echo $?
 ```
 
@@ -502,7 +503,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   108 lesson files, in order
+python-learning-course/   109 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
