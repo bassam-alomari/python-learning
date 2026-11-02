@@ -1,4 +1,4 @@
-# Python Learning — 112 lessons, 51 projects
+# Python Learning — 113 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -83,6 +83,7 @@ python python-learning-course/109-magic-methods-str-len.py # dunder methods call
 python python-learning-course/110-inheritance-super-overriding.py # inherit parent attributes and methods, add child data with super(), override behavior, inspect the inheritance chain
 python python-learning-course/111-multiple-inheritance-mro.py # method overriding, MRO with __mro__/mro(), multiple and multilevel inheritance, cooperative super() order
 python python-learning-course/112-polymorphism.py # same +/len()/method interface, different behavior by type; parent interface and child overrides; uniform mixed-object processing
+python python-learning-course/113-encapsulation-access-control.py # public, protected and private-style attributes, name mangling, getters/setters, and validated updates
 echo $?
 ```
 
@@ -506,7 +507,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   112 lesson files, in order
+python-learning-course/   113 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
