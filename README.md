@@ -1,4 +1,4 @@
-# Python Learning — 116 lessons, 51 projects
+# Python Learning — 117 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -87,6 +87,7 @@ python python-learning-course/113-encapsulation-access-control.py # public, prot
 python python-learning-course/114-getters-and-setters.py # get_name/set_name for private-style data, validation before assignment, rejected updates preserve the previous value
 python python-learning-course/115-property-decorator.py # @property turns computed methods into attribute-style access; compare method/property syntax, read-only and validated setters
 python python-learning-course/116-abstract-base-classes.py # ABC, @abstractmethod contracts, abstract instantiation blocked, concrete child implementations, and ABCMeta
+python python-learning-course/117-databases-introduction.py # database concepts and persistence; temporary SQLite demo performs create/read/update/delete, reconnects and cleans up
 echo $?
 ```
 
@@ -510,7 +511,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   116 lesson files, in order
+python-learning-course/   117 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
