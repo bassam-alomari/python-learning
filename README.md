@@ -1,4 +1,4 @@
-# Python Learning — 122 lessons, 51 projects
+# Python Learning — 123 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -93,6 +93,7 @@ python python-learning-course/119-sqlite-insert-commit-loop.py # INSERT INTO wit
 python python-learning-course/120-sqlite-select-fetch-methods.py # SELECT all/named fields; fetchall, fetchone, fetchmany; loop through, filter, and close database
 python python-learning-course/121-sqlite-safe-fetch-application.py # integrated SQLite app: safe SELECT/fetch, formatted loop, friendly error handling, finally-close on success/error
 python python-learning-course/122-sqlite-update-delete.py # UPDATE and DELETE with precise WHERE/user_id, commit, verify persistence after reconnect, and avoid unintended whole-table changes
+python python-learning-course/123-skills-app-console-skeleton.py # Skills App console skeleton: s/a/u/d/q menu, normalized inputs, validated dispatch, action functions prepared for SQLite
 echo $?
 ```
 
@@ -516,7 +517,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   122 lesson files, in order
+python-learning-course/   123 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
