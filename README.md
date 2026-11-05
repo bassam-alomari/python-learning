@@ -1,4 +1,4 @@
-# Python Learning — 120 lessons, 51 projects
+# Python Learning — 121 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -91,6 +91,7 @@ python python-learning-course/117-databases-introduction.py # database concepts 
 python python-learning-course/118-sqlite-connect-cursor-create-table.py # import sqlite3, connect to .db, create cursor, CREATE TABLE IF NOT EXISTS users(user_id/name/age), close and clean up
 python python-learning-course/119-sqlite-insert-commit-loop.py # INSERT INTO with cursor and parameters, commit persistence, batch insert list with for/enumerate, query saved rows and cleanup
 python python-learning-course/120-sqlite-select-fetch-methods.py # SELECT all/named fields; fetchall, fetchone, fetchmany; loop through, filter, and close database
+python python-learning-course/121-sqlite-safe-fetch-application.py # integrated SQLite app: safe SELECT/fetch, formatted loop, friendly error handling, finally-close on success/error
 echo $?
 ```
 
@@ -514,7 +515,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   120 lesson files, in order
+python-learning-course/   121 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
