@@ -1,4 +1,4 @@
-# Python Learning — 126 lessons, 51 projects
+# Python Learning — 127 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -97,6 +97,7 @@ python python-learning-course/123-skills-app-console-skeleton.py # Skills App co
 python python-learning-course/124-skills-app-sqlite-crud.py # connect Skills App commands to SQLite helpers; user-scoped show/add/update/delete, commits, duplicate/missing handling, scripted run
 python python-learning-course/125-skills-app-reports-and-finale.py # polished per-user skill/progress display, empty-state message, CRUD completion, progress validation and summary reports
 python python-learning-course/126-skills-app-upsert-confirmation.py # find skill by user/name, confirm updates, offer add when missing, prevent duplicates, isolate users and verify persistence
+python python-learning-course/127-sqlite-order-limit-where-in.py # ORDER BY ASC/DESC, LIMIT/OFFSET, WHERE comparisons, IN/NOT IN, parameterized filtering to prevent injection
 echo $?
 ```
 
@@ -520,7 +521,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   126 lesson files, in order
+python-learning-course/   127 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
