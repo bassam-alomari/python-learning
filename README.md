@@ -1,4 +1,4 @@
-# Python Learning — 128 lessons, 51 projects
+# Python Learning — 129 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -99,6 +99,7 @@ python python-learning-course/125-skills-app-reports-and-finale.py # polished pe
 python python-learning-course/126-skills-app-upsert-confirmation.py # find skill by user/name, confirm updates, offer add when missing, prevent duplicates, isolate users and verify persistence
 python python-learning-course/127-sqlite-order-limit-where-in.py # ORDER BY ASC/DESC, LIMIT/OFFSET, WHERE comparisons, IN/NOT IN, parameterized filtering to prevent injection
 python python-learning-course/128-running-python-files-from-terminal.py # run scripts with python file.py, paths/cwd, sys.argv arguments, direct-execution caveats, capture failures
+python python-learning-course/129-timeit-benchmarking.py # timeit repeated timings, repeat batches, compare equivalent code, interpret min/median/spread and measurement noise
 echo $?
 ```
 
@@ -522,7 +523,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   128 lesson files, in order
+python-learning-course/   129 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
