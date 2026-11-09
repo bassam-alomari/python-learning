@@ -1,4 +1,4 @@
-# Python Learning — 133 lessons, 51 projects
+# Python Learning — 134 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -104,6 +104,7 @@ python python-learning-course/130-logging-to-file.py # logging to a file, read t
 python python-learning-course/131-unit-testing-unittest-basics.py # unittest.TestCase, expected vs actual, passing and deliberately failing assertions, comparison checks, subTest case table, and a separate sandbox test module
 python python-learning-course/132-random-letters-ascii-and-indexing.py # string.ascii_letters, 52 letters plus digits for 62 symbols, zero-based valid indexes 0..61, seeded randint selection, random strings and the safer secrets reminder
 python python-learning-course/133-flask-web-app-routes.py # Flask install and app creation, @app.route paths, text/JSON responses, query parameters, development vs production, and local test_client checks
+python python-learning-course/134-flask-render-template.py # Flask templates/ folder, render_template, route data in Jinja placeholders, dynamic page values, loops, escaping and local test_client checks
 echo $?
 ```
 
@@ -527,7 +528,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   133 lesson files, in order
+python-learning-course/   134 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
