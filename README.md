@@ -1,4 +1,4 @@
-# Python Learning — 135 lessons, 51 projects
+# Python Learning — 136 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -106,6 +106,7 @@ python python-learning-course/132-random-letters-ascii-and-indexing.py # string.
 python python-learning-course/133-flask-web-app-routes.py # Flask install and app creation, @app.route paths, text/JSON responses, query parameters, development vs production, and local test_client checks
 python python-learning-course/134-flask-render-template.py # Flask templates/ folder, render_template, route data in Jinja placeholders, dynamic page values, loops, escaping and local test_client checks
 python python-learning-course/135-flask-template-inheritance.py # shared base.html, Jinja extends/block body, homepage and about child templates, centralized CSS links, and local rendered-page checks
+python python-learning-course/136-flask-static-files-url-for.py # Flask static/ assets, url_for static URLs, create and request CSS files, filesystem versus URL paths, and the 404 for a missing asset
 echo $?
 ```
 
@@ -529,7 +530,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   135 lesson files, in order
+python-learning-course/   136 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
