@@ -1,4 +1,4 @@
-# Python Learning — 140 lessons, 51 projects
+# Python Learning — 141 lessons, 51 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -111,6 +111,7 @@ python python-learning-course/137-flask-template-inheritance-homepage-exception.
 python python-learning-course/138-flask-template-list-loop.py # pass a Python list to render_template, loop through values with Jinja, display indexes, handle empty lists and records, and verify rendered HTML locally
 python python-learning-course/139-css-box-model-and-positioning.py # shared main.css/master.css, box-sizing:border-box, margin vs padding, centered text, absolute positioning, percentage sizes and offsets
 python python-learning-course/140-css-keyframes-animations.py # shared CSS @keyframes, from/to and percentage stages, duration/easing, moving/fading elements, group selectors and transitions
+python python-learning-course/141-web-search-automation-and-pacing.py # model a search workflow with local result fixtures, sequential visits, paced waits, and extracting fields without accessing a real website
 echo $?
 ```
 
@@ -534,7 +535,7 @@ shows that `send_error` logs twice — a real detail of the standard library.
 ## Layout
 
 ```
-python-learning-course/   140 lesson files, in order
+python-learning-course/   141 lesson files, in order
 Projects/                 51 project files, in order
 ```
 
