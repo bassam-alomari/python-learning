@@ -1,4 +1,4 @@
-# Python Learning — 142 lessons, 60 projects
+# Python Learning — 142 lessons, 61 projects
 
 A course in Python that never asks you to type anything in. Every file runs to
 completion on its own, prints its own result, and gives the same output on every
@@ -31,6 +31,7 @@ python Projects/project-57-the-bookshop-closes-and-reconciles-sales.py # end-of-
 python Projects/project-58-the-bookshop-rewards-loyal-customers.py # earn/redeem loyalty points, cap discounts, prevent duplicate receipts, create customer statements and export CSV
 python Projects/project-59-the-bookshop-applies-coupons.py # percentage/fixed coupons, minimum spend, usage caps, stacking policy, safe discounts and CSV receipt export
 python Projects/project-60-the-bookshop-imports-supplier-csv.py # validate supplier CSV rows, normalize titles, merge inventory, reject duplicates/bad data and export an error report
+python Projects/project-61-the-bookshop-analyses-margins.py # calculate unit margins and stock profit, classify low-margin/loss books, validate input and export a CSV analysis
 python python-learning-course/52-for-loop-on-dictionaries.py # looping over keys, values, items()
 python python-learning-course/53-nested-loops.py  # for inside for: people and their skills
 python python-learning-course/54-loop-control-continue-break-pass.py # skip, stop, and the placeholder
